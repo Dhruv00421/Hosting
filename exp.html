@@ -1,0 +1,252 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+button {
+  background: #e85757;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px;
+  width: 120px;
+  color: #fff;
+}
+
+.card {
+    user-select: none;
+  background: url("src/card-bg.jpg") no-repeat;
+  background-size: cover;
+  max-width: 500px;
+  margin: auto;
+  height: auto;
+  padding: 40px;
+  position: relative;
+  color: #fff;
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* Slight parallax effect on hover */
+.card:hover .content {
+  transform: translateZ(12px);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+/* Demo only */
+.container {
+  margin-top: 100px;
+}
+
+.photo-cred {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+</style>
+<body>
+    <div class="container">
+        <article class="card">
+          <div class="content">
+            <h2>The Best Beaches</h2>
+            <p>Check out these top 10 beaches this summer.</p>
+            <button type="button">Explore</button>
+          </div>
+        </article>
+      </div>
+      <span class="photo-cred">
+        Photo by
+        <a href="https://unsplash.com/@derekthomson" target="_blank"
+          >@derekthomson</a
+        >
+      </span>
+</body>
+<script>
+    const card = document.querySelector(".card");
+const motionMatchMedia = window.matchMedia("(prefers-reduced-motion)");
+const THRESHOLD = 15;
+
+/*
+ * Read the blog post here:
+ * https://letsbuildui.dev/articles/a-3d-hover-effect-using-css-transforms
+ */
+function handleHover(e) {
+  const { clientX, clientY, currentTarget } = e;
+  const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
+
+  const horizontal = (clientX - offsetLeft) / clientWidth;
+  const vertical = (clientY - offsetTop) / clientHeight;
+  const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
+  const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
+
+  card.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
+}
+
+function resetStyles(e) {
+  card.style.transform = `perspective(${e.currentTarget.clientWidth}px) rotateX(0deg) rotateY(0deg)`;
+}
+
+if (!motionMatchMedia.matches) {
+  card.addEventListener("mousemove", handleHover);
+  card.addEventListener("mouseleave", resetStyles);
+}
+
+</script>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li{
+    list-style-type: none;   
+}
+a{
+    text-decoration: none;
+}
+header{
+    background: url("assests/images/server back.jpg");
+    background-repeat: no-repeat;
+}
+nav{
+    position: absolute;
+    display: flex;
+}
+.men{
+    margin: 10px;
+}
+.men:last-child{
+    margin-left: 200px;
+}
+.men:nth-child(3){
+    margin-left: 300px;
+}
+.menu{
+    display: flex;
+}
+.account{
+    position: absolute; 
+    
+}
+video{
+    /* position:relative; */
+    height: 40px;
+    border-radius: 100px;
+    /* margin-left: -10px; */
+
+}
+.navbar{
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    /* margin-top: 10px; */
+    /* background-color: black; */
+    width: 80px;
+    height: 30px;
+    padding-top: 20px;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    font-size: large;
+    border-radius: 10px;
+}
+.navbar:hover{
+    transition: 0.5s;
+    /* background-color: #26a4f2; */
+    color: chocolate;
+    margin-top: -8px;
+    /* transform: scale(100px); */
+    text-decoration: underline #26a4f2 3px;
+}
+.dropdown-1{
+    display: none;
+}
+.ser:hover .down-1{
+    display: inline-block;
+    flex-direction: column;
+}
+/*.down-1{
+    /* display: none; */
+    /* background-color: black; */
+    /* margin-top: -5px;
+    width: 50px;
+    height: 150px;
+    text-align: c;
+} */
+/* .navlink{ */
+    /* text-align: center;
+    margin: 10px;
+} */
+  </style>
+</head>
+<body>
+  <div class="menu men">
+    <li><a class="navbar links" href="index.html">Home</a></li>
+    <li class="ser"><a class="navbar links" href="#">Servers</a>
+
+            <ul class="down-1">
+                <li><a class="dropmenu-1 navlink" href="#">Web</a></li>
+                <li><a class="dropmenu-1 navlink" href="#">Gaming</a></li>
+                <li><a class="dropmenu-1 navlink" href="#">Proxy</a></li>
+                <li><a class="dropmenu-1 navlink" href="#">Database</a></li>
+                <li><a class="dropmenu-1 navlink" href="#">Other</a></li>
+            </ul>
+    </li>
+    <li><a class="navbar links" href="#">Pricing</a></li>
+    <li><a class="navbar links" href="#">About</a></li>
+    <li><a class="navbar links" href="#">Support</a></li>
+</div>
+</body>
+</html>
